@@ -7,6 +7,7 @@ gem 'active_model_serializers',"0.8.3"
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'pg'
 gem 'puma', platforms: :ruby
+gem 'mathematical'
 
 group :production do
 	gem 'rails_12factor'

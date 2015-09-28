@@ -8,3 +8,5 @@ RUN \
   DEBIAN_FRONTEND=noninteractive apt-get install -y -q && \
   bison flex libffi-dev libxml2-dev libgdk-pixbuf2.0-dev && \ 
   libcairo2-dev libpango1.0-dev ttf-lyx
+
+RUN gem install mathematical -v '1.5.12'

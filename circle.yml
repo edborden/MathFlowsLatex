@@ -1,5 +1,5 @@
 deployment:
   production:
     branch: master
-    heroku:
-      appname: mathflows-svg
+    commands:
+      -heroku docker:release --app mathflows-svg

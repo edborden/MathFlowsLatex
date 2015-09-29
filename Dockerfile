@@ -31,9 +31,6 @@ RUN gem install bundler -v 1.9.10 --no-ri --no-rdoc
 ENV PATH /app/user/bin:/app/heroku/ruby/bundle/ruby/2.2.0/bin:$PATH
 ENV BUNDLE_APP_CONFIG /app/heroku/ruby/.bundle/config
 
-# Testing puma config
-# RUN bundle exec puma -C config/puma.rb
-
 # Run bundler to cache dependencies
 COPY ["Gemfile", "Gemfile.lock", "/app/user/"]
 RUN bundle install --path /app/heroku/ruby/bundle --jobs 4

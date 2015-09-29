@@ -1,0 +1,3 @@
+[submodule "mathematical"]
+	path = mathematical
+	url = https://github.com/gjtorikian/mathematical.git

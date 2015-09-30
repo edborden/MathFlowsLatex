@@ -1,8 +1,8 @@
 machine:
   services:
     - docker
-  pre:
-    - sudo curl -sSL https://get.docker.com/ | sh
+  #pre:
+  #  - sudo curl -sSL https://get.docker.com/ | sh
   environment:
     SHORT_SHA: $(echo $CIRCLE_SHA1 | cut -b1-7)
     TAG_NAME: "br-$CIRCLE_BRANCH-$SHORT_SHA"

@@ -14,7 +14,7 @@ deployment:
   production:
     branch: production
     commands:
-      - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
+    #  - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
       - heroku plugins:install heroku-docker
       - cd $CIRCLE_PROJECT_REPONAME
       - heroku docker:release --app mathflows-svg

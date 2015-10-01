@@ -16,7 +16,7 @@ class RenderController < ApplicationController
 	end
 
 	def renderer
-		@renderer ||= Mathematical.new mathematical_options
+		@renderer ||= Mathematical.new# mathematical_options
 	end
 
 	def rendered

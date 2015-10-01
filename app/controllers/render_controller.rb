@@ -2,7 +2,8 @@ class RenderController < ApplicationController
 
 	def render
 
-		send_data rendered[:data],filename:"equation.png"
+		p rendered
+		send_data rendered[:data]
 
 	end
 

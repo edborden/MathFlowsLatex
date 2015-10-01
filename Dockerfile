@@ -1,6 +1,6 @@
 # FROM heroku/ruby
 FROM heroku/cedar:14
-MAINTAINER Dale-Kurt Murray "dalekurt.murray@gmail.com"
+MAINTAINER Ed Borden "borden.edward@gmail.com"
 
 # Bootstrap
 RUN \
@@ -32,7 +32,7 @@ ENV PATH /app/user/bin:/app/heroku/ruby/bundle/ruby/2.2.0/bin:$PATH
 ENV BUNDLE_APP_CONFIG /app/heroku/ruby/.bundle/config
 
 # Run bundler to cache dependencies
-COPY ["Gemfile", "Gemfile.lock", "/app/user/"]
+COPY ["Gemfile", "/app/user/"]
 RUN bundle install --path /app/heroku/ruby/bundle --jobs 4
 ADD . /app/user
 

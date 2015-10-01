@@ -1,12 +1,6 @@
 machine:
   services:
     - docker
-  #pre:
-  #  - sudo curl -sSL https://get.docker.com/ | sh
-  #environment:
-   # SHORT_SHA: $(echo $CIRCLE_SHA1 | cut -b1-7)
-    #TAG_NAME: "br-$CIRCLE_BRANCH-$SHORT_SHA"
-    #IMAGE_PATH: "edward/mathflowslatex"
 dependencies:
   pre:
     - sudo pip install docker-compose==1.3.3
@@ -14,11 +8,5 @@ deployment:
   production:
     branch: master
     commands:
-    #  - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
-    #  - heroku login
       - heroku plugins:install heroku-docker
-    #  - cd $CIRCLE_PROJECT_REPONAME
       - heroku docker:release --app mathflows-svg
-#test:
-#  override:
-#    - 'bundle install'

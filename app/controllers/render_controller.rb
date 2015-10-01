@@ -1,11 +1,8 @@
 class RenderController < ApplicationController
 
-	def render
+	def latex
 
-		options = {type: "image/svg+xml",disposition: "attachment",filename: "equation.svg"}
-		send_file_headers!(options)
-		render options.merge(:text => rendered[:data])
-		#send_data rendered[:data]
+		send_data rendered[:data]
 
 	end
 

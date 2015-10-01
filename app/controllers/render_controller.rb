@@ -2,7 +2,7 @@ class RenderController < ApplicationController
 
 	def latex
 
-		options = {filename:"equation.svg",type:"image/svg+xml"}
+		options = {}
 		options.merge(disposition: "inline") if params[:inline]
 		send_data rendered[:data], options
 
@@ -11,13 +11,13 @@ class RenderController < ApplicationController
 	def mathematical_options
 		{
 			ppi: 300.0,
-			zoom: 0.25,
+			#zoom: 0.25,
 			format: :png
 		}
 	end
 
 	def renderer
-		@renderer ||= Mathematical.new# mathematical_options
+		@renderer ||= Mathematical.new mathematical_options
 	end
 
 	def rendered

@@ -1,22 +1,21 @@
-class RenderController
+class RenderController < ApplicationController
 
 	def render
 
-		math = params[:math]
-		content_type 'image/svg+xml'
-		to_svg(mode.call(math))[:data]
+		send_data renderer.render(params[:math])[:data]
 
 	end
 
-	def mathmatical
-		@mathmatical ||= Mathematical.new
+	def mathematical_options
+		{
+			ppi: 300.0,
+			zoom: 0.25,
+			format: :png
+		}
 	end
 
-	def to_svg(formula)
-		formula = URI.decode(formula).sub(/\\\\/, "\\\\\\\\")
-		result = mathmatical.render(formula)
-		halt(406) if result[:exception]
-		result
+	def renderer
+		@renderer ||= Mathematical.new(mathematical_options)
 	end
 
 end

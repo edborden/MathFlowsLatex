@@ -1,5 +1,6 @@
 {
   "name": "MathFlow",
   "description": "MathFlowsAPI",
-  "image": "heroku/cedar-14"
+  "image": "heroku/ruby",
+  "addons": [ "heroku-postgresql" ]
 }

@@ -13,6 +13,4 @@ gem 'nokogiri', '1.6.6.2'
 group :production do
 	gem 'rails_12factor'
 	gem 'newrelic_rpm'
-	#gem 'unicorn', platforms: :ruby
-	#gem 'le'
 end

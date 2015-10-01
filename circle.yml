@@ -8,5 +8,6 @@ deployment:
   production:
     branch: master
     commands:
+      - rm Gemfile.lock
       - heroku plugins:install heroku-docker
-      - heroku docker:release --app mathflows-svg
+      - heroku docker:release --app mathflows-latex

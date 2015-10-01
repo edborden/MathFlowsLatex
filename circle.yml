@@ -17,7 +17,7 @@ deployment:
     #  - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
     #  - heroku login
       - heroku plugins:install heroku-docker
-      - cd $CIRCLE_PROJECT_REPONAME
+    #  - cd $CIRCLE_PROJECT_REPONAME
       - heroku docker:release --app mathflows-svg
 test:
   override:

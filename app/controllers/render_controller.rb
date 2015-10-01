@@ -2,7 +2,7 @@ class RenderController < ApplicationController
 
 	def latex
 
-		options = {}
+		options = {filename:"equation.svg",type:"image/svg+xml"}
 		options.merge(disposition: "inline") if params[:inline]
 		send_data rendered[:data], options
 

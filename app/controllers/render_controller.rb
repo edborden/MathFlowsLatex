@@ -2,7 +2,7 @@ class RenderController < ApplicationController
 
 	def render
 
-		options = {type: :svg,disposition: "attachment",filename: "equation.svg"}
+		options = {type: "image/svg+xml",disposition: "attachment",filename: "equation.svg"}
 		send_file_headers!(options)
 		render options.slice(:status, :content_type).merge(:text => rendered[:data])
 		#send_data rendered[:data]

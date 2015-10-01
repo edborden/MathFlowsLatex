@@ -2,7 +2,9 @@ class RenderController < ApplicationController
 
 	def latex
 
-		send_data rendered[:data]
+		options = {}
+		options.merge(disposition: "inline") if params[:inline]
+		send_data rendered[:data], options
 
 	end
 

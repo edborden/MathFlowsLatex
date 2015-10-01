@@ -2,8 +2,9 @@ class RenderController < ApplicationController
 
 	def render
 
-		p rendered
-		send_data rendered[:data]
+		send_file_headers! {}
+		render options.slice(:status, :content_type).merge(:text => rendered[:data])
+		#send_data rendered[:data]
 
 	end
 

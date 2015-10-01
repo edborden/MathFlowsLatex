@@ -2,7 +2,7 @@ class RenderController < ApplicationController
 
 	def render
 
-		send_data rendered[:data]
+		send_data rendered[:data],filename:"equation.png"
 
 	end
 
@@ -15,11 +15,11 @@ class RenderController < ApplicationController
 	end
 
 	def renderer
-		@renderer ||= Mathematical.new(mathematical_options)
+		@renderer ||= Mathematical.new mathematical_options
 	end
 
 	def rendered
-		@rendered ||= renderer.render(params[:math])
+		@rendered ||= renderer.render params[:math]
 	end
 
 end

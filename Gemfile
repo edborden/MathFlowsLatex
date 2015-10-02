@@ -5,7 +5,6 @@ gem 'rails', '4.2.4'
 gem 'rails-api', "0.4.0"
 gem 'active_model_serializers',"0.8.3"
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
-gem 'pg'
 gem 'puma', platforms: :ruby
 gem 'mathematical'
 

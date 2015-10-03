@@ -20,8 +20,6 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    active_model_serializers (0.8.3)
-      activemodel (>= 3.0)
     activejob (4.2.4)
       activesupport (= 4.2.4)
       globalid (>= 0.3.0)
@@ -55,7 +53,6 @@ GEM
     newrelic_rpm (3.13.0.299)
     nokogiri (1.6.6.2-x64-mingw32)
       mini_portile (~> 0.6.0)
-    pg (0.18.2-x64-mingw32)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -109,9 +106,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  active_model_serializers (= 0.8.3)
   newrelic_rpm
-  pg
   puma
   rails (= 4.2.4)
   rails-api (= 0.4.0)

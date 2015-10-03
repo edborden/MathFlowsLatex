@@ -3,7 +3,11 @@ FROM heroku/cedar:14
 MAINTAINER Ed Borden "borden.edward@gmail.com"
 
 # Bootstrap
-RUN apt-get -qq -y install bison flex libffi-dev libxml2-dev libgdk-pixbuf2.0-dev libcairo2-dev libpango1.0-dev ttf-lyx cmake
+RUN \
+	apt-get -qq update && \
+  DEBIAN_FRONTEND=noninteractive apt-get -qq -y install \
+  bison flex libffi-dev libxml2-dev libgdk-pixbuf2.0-dev \
+  libcairo2-dev libpango1.0-dev ttf-lyx cmake
 RUN ls /usr/share/fonts/truetype/ttf-lyx
 
 # RUN mkdir -p /app/user

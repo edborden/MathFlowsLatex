@@ -4,6 +4,12 @@ machine:
 dependencies:
   pre:
     - sudo pip install docker-compose==1.3.3
+database:
+  override:
+    - ls
+test:
+  override:
+    - ls
 deployment:
   production:
     branch: master

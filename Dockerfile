@@ -5,12 +5,19 @@ MAINTAINER Ed Borden "borden.edward@gmail.com"
 # Bootstrap
 RUN \
 	apt-get -qq update && \
-  apt-get -qq -y install \
+  DEBIAN_FRONTEND=noninteractive apt-get -qq -y install \
   bison flex libffi-dev libxml2-dev libgdk-pixbuf2.0-dev \
   libcairo2-dev libpango1.0-dev ttf-lyx cmake
-RUN ls /usr/share/fonts/truetype/ttf-lyx
+RUN \
+  wget -O /usr/share/fonts/truetype/ttf-lyx/cmex10.ttf http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/cmex10.ttf \
+  wget -O /usr/share/fonts/truetype/ttf-lyx/cmmi10.ttf http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/cmmi10.ttf \
+  wget -O /usr/share/fonts/truetype/ttf-lyx/cmr10.ttf http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/cmr10.ttf \
+  wget -O /usr/share/fonts/truetype/ttf-lyx/cmsy10.ttf http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/cmsy10.ttf \
+  wget -O /usr/share/fonts/truetype/ttf-lyx/esint10.ttf http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/esint10.ttf \
+  wget -O /usr/share/fonts/truetype/ttf-lyx/eufm10.ttf http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/eufm10.ttf \
+  wget -O /usr/share/fonts/truetype/ttf-lyx/msam10.ttf http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/msam10.ttf \
+  wget -O /usr/share/fonts/truetype/ttf-lyx/msbm10.ttf http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/msbm10.ttf
 
-# RUN mkdir -p /app/user
 WORKDIR /app/user
 
 ENV GEM_PATH /app/heroku/ruby/bundle/ruby/2.2.0

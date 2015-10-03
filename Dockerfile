@@ -23,6 +23,14 @@ RUN gem install bundler -v 1.9.10 --no-ri --no-rdoc
 ENV PATH /app/user/bin:/app/heroku/ruby/bundle/ruby/2.2.0/bin:$PATH
 ENV BUNDLE_APP_CONFIG /app/heroku/ruby/.bundle/config
 
+# Bootstrap
+RUN \
+  apt-get -qq update && \
+  apt-get -qq -y install ttf-lyx && \
+  DEBIAN_FRONTEND=noninteractive apt-get -qq -y install \
+  bison flex libffi-dev libxml2-dev libgdk-pixbuf2.0-dev \
+  libcairo2-dev libpango1.0-dev cmake
+
 # Run bundler to cache dependencies
 COPY ["Gemfile", "/app/user/"]
 RUN bundle install --path /app/heroku/ruby/bundle --jobs 4
@@ -40,13 +48,5 @@ RUN echo "export PATH=\"$PATH\" GEM_PATH=\"$GEM_PATH\" GEM_HOME=\"$GEM_HOME\" RA
 
 COPY ./init.sh /usr/bin/init.sh
 RUN chmod +x /usr/bin/init.sh
-
-# Bootstrap
-RUN \
-  apt-get -qq update && \
-  apt-get -qq -y install ttf-lyx && \
-  DEBIAN_FRONTEND=noninteractive apt-get -qq -y install \
-  bison flex libffi-dev libxml2-dev libgdk-pixbuf2.0-dev \
-  libcairo2-dev libpango1.0-dev cmake
 
 ENTRYPOINT ["/usr/bin/init.sh"]

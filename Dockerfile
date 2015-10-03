@@ -34,7 +34,6 @@ ENV BUNDLE_APP_CONFIG /app/heroku/ruby/.bundle/config
 
 RUN ls /usr/share/fonts/truetype/lyx/
 
-
 # Run bundler to cache dependencies
 COPY ["Gemfile", "/app/user/"]
 RUN bundle install --path /app/heroku/ruby/bundle --jobs 4
@@ -53,6 +52,6 @@ RUN echo "export PATH=\"$PATH\" GEM_PATH=\"$GEM_PATH\" GEM_HOME=\"$GEM_HOME\" RA
 COPY ./init.sh /usr/bin/init.sh
 RUN chmod +x /usr/bin/init.sh
 
+RUN ls /usr/share/fonts/truetype/lyx/
+
 ENTRYPOINT ["/usr/bin/init.sh"]
-
-

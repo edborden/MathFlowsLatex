@@ -14,7 +14,6 @@ RUN \
   wget --directory-prefix=/usr/share/fonts/truetype/ttf-lyx/ http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/cmmi10.ttf && \
   wget --directory-prefix=/usr/share/fonts/truetype/ttf-lyx/ http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/cmr10.ttf && \
   wget --directory-prefix=/usr/share/fonts/truetype/ttf-lyx/ http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/cmsy10.ttf && \
-  wget --directory-prefix=/usr/share/fonts/truetype/ttf-lyx/ http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/esint10.ttf && \
   wget --directory-prefix=/usr/share/fonts/truetype/ttf-lyx/ http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/eufm10.ttf && \
   wget --directory-prefix=/usr/share/fonts/truetype/ttf-lyx/ http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/msam10.ttf && \
   wget --directory-prefix=/usr/share/fonts/truetype/ttf-lyx/ http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/msbm10.ttf

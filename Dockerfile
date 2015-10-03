@@ -9,14 +9,7 @@ RUN \
   bison flex libffi-dev libxml2-dev libgdk-pixbuf2.0-dev \
   libcairo2-dev libpango1.0-dev ttf-lyx cmake
 RUN \
-  mkdir -p /usr/share/fonts/truetype/ttf-lyx && \
-  wget --directory-prefix=/usr/share/fonts/truetype/ttf-lyx/ http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/cmex10.ttf && \
-  wget --directory-prefix=/usr/share/fonts/truetype/ttf-lyx/ http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/cmmi10.ttf && \
-  wget --directory-prefix=/usr/share/fonts/truetype/ttf-lyx/ http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/cmr10.ttf && \
-  wget --directory-prefix=/usr/share/fonts/truetype/ttf-lyx/ http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/cmsy10.ttf && \
-  wget --directory-prefix=/usr/share/fonts/truetype/ttf-lyx/ http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/eufm10.ttf && \
-  wget --directory-prefix=/usr/share/fonts/truetype/ttf-lyx/ http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/msam10.ttf && \
-  wget --directory-prefix=/usr/share/fonts/truetype/ttf-lyx/ http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/ && \
+  find / "*.ttf" && \
   ls /usr/share/fonts/truetype/ttf-lyx/
 
 WORKDIR /app/user

@@ -6,8 +6,6 @@ MAINTAINER Ed Borden "borden.edward@gmail.com"
 RUN \
   apt-get -qq update && \
   apt-get -qq -y install ttf-lyx && \
-  find / -iname "*.ttf" && \
-  ls /usr/share/fonts/truetype/ttf-lyx/ && \
   DEBIAN_FRONTEND=noninteractive apt-get -qq -y install \
   bison flex libffi-dev libxml2-dev libgdk-pixbuf2.0-dev \
   libcairo2-dev libpango1.0-dev cmake

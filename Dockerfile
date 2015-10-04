@@ -25,6 +25,7 @@ ENV BUNDLE_APP_CONFIG /app/heroku/ruby/.bundle/config
 
 # Bootstrap
 RUN \
+  apt-get -qq update && \
   DEBIAN_FRONTEND=noninteractive apt-get -qq -y install \
   bison flex libffi-dev libxml2-dev libgdk-pixbuf2.0-dev \
   libcairo2-dev libpango1.0-dev cmake

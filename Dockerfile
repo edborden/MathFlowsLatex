@@ -6,8 +6,10 @@ RUN \
   apt-get -qq update && \
   apt-get -qq -y install ttf-lyx
 
-RUN ls /usr/share/fonts/truetype/lyx/
-ADD /usr/share/fonts/truetype/lyx/ /app/user/vendor/fonts/
+WORKDIR /usr/share/fonts/truetype/lyx
+RUN ls
+#ENV PATH .:$PATH
+COPY . /app/user/vendor/fonts/
 RUN ls /app/user/vendor/fonts/
 
 WORKDIR /app/user

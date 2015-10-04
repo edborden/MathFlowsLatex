@@ -2,16 +2,6 @@
 FROM heroku/cedar:14
 MAINTAINER Ed Borden "borden.edward@gmail.com"
 
-RUN \
-  apt-get -qq update && \
-  apt-get -qq -y install ttf-lyx
-
-WORKDIR /usr/share/fonts/truetype/lyx
-RUN ls
-#ENV PATH .:$PATH
-COPY . /app/user/vendor/fonts/
-RUN ls /app/user/vendor/fonts/
-
 WORKDIR /app/user
 
 ENV GEM_PATH /app/heroku/ruby/bundle/ruby/2.2.0

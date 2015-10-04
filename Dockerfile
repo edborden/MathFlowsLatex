@@ -49,6 +49,7 @@ RUN echo "export PATH=\"$PATH\" GEM_PATH=\"$GEM_PATH\" GEM_HOME=\"$GEM_HOME\" RA
 COPY ./init.sh /usr/bin/init.sh
 RUN chmod +x /usr/bin/init.sh
 
-ADD /usr/share/fonts/truetype/lyx /app/user/vendor/fonts
+RUN ls /usr/share/fonts/truetype/lyx/
+ADD /usr/share/fonts/truetype/lyx/ /app/user/vendor/fonts/
 
 ENTRYPOINT ["/usr/bin/init.sh"]

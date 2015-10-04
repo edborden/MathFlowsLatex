@@ -4,7 +4,7 @@ machine:
 dependencies:
   pre:
     - sudo pip install docker-compose==1.3.3
-    - mkdir ./MathFlowsLatex/vendor/fonts
+    - mkdir MathFlowsLatex/vendor/fonts
     - sudo apt-get -qq -y install ttf-lyx
     - cp -a /usr/share/fonts/truetype/ttf-lyx ./MathFlowsLatex/vendor/fonts
 database:

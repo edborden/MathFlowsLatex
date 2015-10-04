@@ -2,6 +2,14 @@
 FROM heroku/cedar:14
 MAINTAINER Ed Borden "borden.edward@gmail.com"
 
+RUN \
+  apt-get -qq update && \
+  apt-get -qq -y install ttf-lyx
+
+RUN ls /usr/share/fonts/truetype/lyx/
+ADD /usr/share/fonts/truetype/lyx/ /app/user/vendor/fonts/
+RUN ls /app/user/vendor/fonts/
+
 WORKDIR /app/user
 
 ENV GEM_PATH /app/heroku/ruby/bundle/ruby/2.2.0
@@ -25,8 +33,6 @@ ENV BUNDLE_APP_CONFIG /app/heroku/ruby/.bundle/config
 
 # Bootstrap
 RUN \
-  apt-get -qq update && \
-  apt-get -qq -y install ttf-lyx && \
   DEBIAN_FRONTEND=noninteractive apt-get -qq -y install \
   bison flex libffi-dev libxml2-dev libgdk-pixbuf2.0-dev \
   libcairo2-dev libpango1.0-dev cmake
@@ -48,8 +54,5 @@ RUN echo "export PATH=\"$PATH\" GEM_PATH=\"$GEM_PATH\" GEM_HOME=\"$GEM_HOME\" RA
 
 COPY ./init.sh /usr/bin/init.sh
 RUN chmod +x /usr/bin/init.sh
-
-RUN ls /usr/share/fonts/truetype/lyx/
-ADD /usr/share/fonts/truetype/lyx/ /app/user/vendor/fonts/
 
 ENTRYPOINT ["/usr/bin/init.sh"]
